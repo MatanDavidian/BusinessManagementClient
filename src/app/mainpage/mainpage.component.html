@@ -1,0 +1,18 @@
+<h1>
+    Employee Details Windows:
+</h1>
+<div class="details">
+    <tr>
+        <td>
+        <img class="img" src="https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg" alt="personal picture">
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+            <h3>Name: {{user.first_name}}</h3>
+            <h3>Position: {{user.position}}</h3>
+            <app-reports [user]="user"></app-reports>
+        </td>
+    </tr>
+</div>
+<app-tasks [user]="user"></app-tasks>
+<app-subordinates [user]="user"></app-subordinates>

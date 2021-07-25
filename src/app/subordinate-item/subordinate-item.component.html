@@ -1,0 +1,35 @@
+<div class="user">
+    <h3 style="display:inline" >{{user.first_name}}&nbsp;&nbsp;{{user.position}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary btn-space" (click)="open(content)">Assign Task</button>
+    </h3> 
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Report</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="task">Task</label>
+          <div class="input-group">
+            <input type="text" id="task" class="form-control" #my_task>
+          </div>
+          <label for="task">due date</label>
+          <div class="form-group">
+            <input type="date" id="due date" class="form-control" #due_date>
+          </div>
+        </div>
+        <div class="border text-center">
+            <button data-dismiss="modal" class="btn btn-info" (click)="sendTask(my_task.value,due_date.value)">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+    </div>
+  </ng-template>
